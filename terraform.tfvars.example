@@ -1,0 +1,12 @@
+# Copy this file to terraform.tfvars and update the values
+# Do not commit terraform.tfvars to version control
+
+# Required variables
+project_id = "your-project-id-here"
+
+# Optional variables with defaults
+# region = "us-central1"
+# zone = "us-central1-a"
+# instance_name = "jump-host"
+# ssh_user = "jumphost"
+# ssh_pub_key_path = "~/.ssh/id_rsa.pub" 
