@@ -12,7 +12,8 @@ dnf install -y wget curl vim git
 # Install Python 3.9
 dnf install -y python39
 alternatives --set python3 /usr/bin/python3.9
-dnf install -y python39-pip
+# dnf install -y python39-pip  # Seems to be failing
+dnf install -y python3-pip
 
 # Install Docker
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
