@@ -32,4 +32,28 @@ variable "ssh_user" {
   description = "SSH username"
   type        = string
   default     = "jumphost"
-} 
+}
+
+# Startup script configuration
+variable "startup_script_path" {
+  description = "Path to the startup script file relative to the module root"
+  type        = string
+  default     = "startup_script.sh"
+  
+  validation {
+    condition     = can(file(var.startup_script_path))
+    error_message = "The startup script file must exist and be readable."
+  }
+}
+
+# Disk size configuration
+variable "disk_size_gb" {
+  description = "Size of the boot disk in GB"
+  type        = number
+  default     = 20
+  
+  validation {
+    condition     = var.disk_size_gb >= 10 && var.disk_size_gb <= 1000
+    error_message = "Disk size must be between 10 and 1000 GB."
+  }
+}

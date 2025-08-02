@@ -1,0 +1,41 @@
+# Deploy-specific Terraform Variables
+# Copy this file to deploy.tfvars and update the values for your deployment
+# Do not commit deploy.tfvars to version control
+
+# =============================================================================
+# STARTUP SCRIPT CONFIGURATION
+# =============================================================================
+
+# Path to the startup script file relative to the module root
+# Available options:
+#   - "startup_script.sh"         (default: basic development tools)
+#   - "startup_script_ollama.sh"  (includes Ollama AI setup)
+# startup_script_path = "startup_script_ollama.sh"
+
+# =============================================================================
+# DISK CONFIGURATION
+# =============================================================================
+
+# Size of the boot disk in GB
+# Minimum: 10 GB (GCP requirement)
+# Maximum: 1000 GB (validation limit)
+# Default: 20 GB
+# 
+# Common configurations:
+#   - 20 GB:  Basic development environment
+#   - 50 GB:  Development with Docker containers
+#   - 100 GB: Heavy development with multiple tools
+#   - 200 GB: Data processing or ML workloads
+# disk_size_gb = 50
+
+# =============================================================================
+# EXAMPLE CONFIGURATIONS
+# =============================================================================
+
+# Example 1: Basic development setup (default values)
+# startup_script_path = "startup_script.sh"
+# disk_size_gb = 20
+
+# Example 2: AI/ML development with Ollama
+# startup_script_path = "startup_script_ollama.sh"
+# disk_size_gb = 100

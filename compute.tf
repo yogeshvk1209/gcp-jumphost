@@ -29,7 +29,7 @@ resource "google_compute_instance" "jump_host" {
   boot_disk {
     initialize_params {
       image = data.google_compute_image.centos.self_link
-      size  = 20  # GB
+      size  = var.disk_size_gb
       type  = "pd-standard"
     }
   }
@@ -54,7 +54,7 @@ resource "google_compute_instance" "jump_host" {
   }
 
   # Use external startup script
-  metadata_startup_script = file("${path.module}/startup_script.sh")
+  metadata_startup_script = file("${path.module}/${var.startup_script_path}")
 
   service_account {
     scopes = [
