@@ -26,6 +26,10 @@ terraform.rc
 # Ignore lock files
 .terraform.lock.hcl 
 
+# Ignore SSH keys
+ssh-keys/jumphost-key
+ssh-keys/jumphost-key.pub
+
 # Ignore Kiro files
 .kiro*
 .clinerules/byterover-rules.md

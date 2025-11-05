@@ -50,7 +50,7 @@ resource "google_compute_instance" "jump_host" {
 
   # Add SSH key to instance metadata
   metadata = {
-    ssh-keys = "${var.ssh_user}:${file(var.ssh_pub_key_path)}"
+    ssh-keys = "${var.ssh_user}:${tls_private_key.ssh_key.public_key_openssh}"
   }
 
   # Use external startup script
