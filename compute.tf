@@ -44,6 +44,7 @@ resource "google_compute_instance" "jump_host" {
   scheduling {
     automatic_restart = false
     provisioning_model = "SPOT"
+    preemptible = true
     instance_termination_action = "STOP"
   }
 

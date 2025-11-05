@@ -2,7 +2,7 @@
 # Do not commit terraform.tfvars to version control
 
 # Required variables
-project_id = ""
+project_id = "gketf-477307"
 
 # Optional variables with defaults
 # region = "us-central1"
