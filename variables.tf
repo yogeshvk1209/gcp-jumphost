@@ -57,3 +57,9 @@ variable "disk_size_gb" {
     error_message = "Disk size must be between 10 and 1000 GB."
   }
 }
+
+variable "ssh_source_ranges" {
+  description = "List of CIDR ranges that are allowed to SSH into the jump host. Restrict this to known IPs for better security."
+  type        = list(string)
+  default     = ["0.0.0.0/0"] # WARNING: 0.0.0.0/0 allows access from any IP. Restrict this to known IPs for better security.
+}
