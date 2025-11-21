@@ -37,7 +37,7 @@ terraform apply --auto-approve
 
 ## Accessing the Jump Host
 
-Once provisioned, you can SSH into the instance using:
+Once provisioned, you can SSH into the instance using:(This info also configured to be part of output.tf)
 ```bash
 ssh -i ~/.ssh/id_rsa USERNAME@EXTERNAL_IP
 ```
